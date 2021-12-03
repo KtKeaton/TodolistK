@@ -12,6 +12,9 @@
 
 ActiveRecord::Schema.define(version: 2021_12_03_114452) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "categories", force: :cascade do |t|
     t.string "tag"
     t.datetime "created_at", precision: 6, null: false
@@ -19,8 +22,8 @@ ActiveRecord::Schema.define(version: 2021_12_03_114452) do
   end
 
   create_table "category_tasks", force: :cascade do |t|
-    t.integer "task_id", null: false
-    t.integer "category_id", null: false
+    t.bigint "task_id", null: false
+    t.bigint "category_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["category_id"], name: "index_category_tasks_on_category_id"
@@ -33,7 +36,7 @@ ActiveRecord::Schema.define(version: 2021_12_03_114452) do
     t.datetime "due_date"
     t.integer "priority"
     t.integer "status"
-    t.integer "user_id", null: false
+    t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_tasks_on_user_id"
