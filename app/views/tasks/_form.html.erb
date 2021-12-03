@@ -1,0 +1,29 @@
+<%= form_for(task) do |form| %>
+  <% if @task.errors.present? %>
+    <ol>
+      <% @task.errors.each do |error, message| %>
+        <li>WARNING: <%= "#{error.capitalize}  #{message}" %>
+        </li>
+        <% end %>
+    </ol>
+  <% end %>
+
+      <div>
+        <%= form.label :name, "任務名稱" %>
+          <%= form.text_field :name %>
+      </div>
+
+      <div>
+        <%= form.label :due_date, "任務到期時間" %>
+          <%= form.datetime_field :due_date %>
+      </div>
+
+      <div>
+        <%= form.label :note, "任務內容" %>
+          <%= form.text_field :note %>
+      </div>
+
+      <div>
+        <%= form.submit "確定" %>
+      </div>
+<% end %>
