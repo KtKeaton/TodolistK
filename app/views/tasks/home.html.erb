@@ -2,19 +2,19 @@
   <%= render "navbar" %>
 </div>
 
-<h1>我的任務列表</h1>
+<h1><%= t :我的任務列表 %></h1>
   <ul>
     <% @tasks.each do |task| %>
       <li>
         <%= task.name %>
-          <%= link_to "任務內容" , task_path(task) %>
-            <%= link_to "編輯任務" , edit_task_path(task) %>
-            <%= link_to "刪除任務" , task_path(task), method: :delete, data:{ confirm: "確定嗎?" } %>
+          <%= link_to :任務內容 , task_path(task) %>
+            <%= link_to :編輯任務 , edit_task_path(task) %>
+            <%= link_to :刪除任務 , task_path(task), method: :delete, data:{ confirm: :確定嗎 } %>
       </li>
     <% end %>
   </ul>
 
-    <%= link_to "增加新任務" , new_task_path %>
+    <%= link_to :增加新任務 , new_task_path %>
 
 <% flash.each do |type, msg| %>
   <div>
