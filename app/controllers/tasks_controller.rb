@@ -1,6 +1,6 @@
 class TasksController < ApplicationController
   def home
-    @tasks = Task.all
+    @tasks = Task.all.order("created_at desc")
   end
 
   def new
