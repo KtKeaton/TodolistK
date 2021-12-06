@@ -1,4 +1,18 @@
 zh-TW:
+  task_kill: "任務已刪除"
+  task_close: "任務已過期，不可刪除"
+  task_list: "我的任務列表"
+  task_cont: "任務內容"
+  task_do_edit: "編輯任務"
+  task_do_kill: "刪除任務"
+  task_do_sure: "確定嗎"
+  task_do_add: "增加新任務"
+  task_title: "任務名稱"
+  task_date: "任務到期時間"
+  task_save: "儲存任務"
+  user_regi: "註冊會員"
+  user_login: "登入會員"
+
   activerecord:
     errors:
       messages:
