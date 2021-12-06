@@ -9,21 +9,21 @@
   <% end %>
 
       <div>
-        <%= form.label :name, :任務名稱 %>
+        <%= form.label :name, t('task_title') %>
           <%= form.text_field :name %>
       </div>
 
       <div>
-        <%= form.label :due_date, :任務到期時間 %>
+        <%= form.label :due_date, t('task_date') %>
           <%= form.datetime_field :due_date %>
       </div>
 
       <div>
-        <%= form.label :note, :任務內容 %>
+        <%= form.label :note, t('task_cont') %>
           <%= form.text_field :note %>
       </div>
 
       <div>
-        <%= form.submit :確定 %>
+        <%= form.submit t('task_save') %>
       </div>
 <% end %>

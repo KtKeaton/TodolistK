@@ -35,9 +35,9 @@ class TasksController < ApplicationController
 
     if Time.now < find_task.date
       @task.destroy
-      redirect_to tasks_url, :notice => I18n.t(:任務已刪除)
+      redirect_to tasks_url, :notice => I18n.t(:task_kill)
     else
-      redirect_to tasks_url, :notice => I18n.t(:任務已過期，不可刪除)
+      redirect_to tasks_url, :notice => I18n.t(:task_close)
     end
   end
   

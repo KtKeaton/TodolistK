@@ -2,19 +2,19 @@
   <%= render "navbar" %>
 </div>
 
-<h1><%= t ('我的任務列表') %></h1>
+<h1><%= t('task_list') %></h1>
   <ul>
     <% @tasks.each do |task| %>
       <li>
         <%= task.name %>
-          <%= link_to :任務內容 , task_path(task) %>
-            <%= link_to :編輯任務 , edit_task_path(task) %>
-            <%= link_to :刪除任務 , task_path(task), method: :delete, data:{ confirm: :確定嗎 } %>
+          <%= link_to t('task_cont') , task_path(task) %>
+            <%= link_to t('task_do_edit') , edit_task_path(task) %>
+            <%= link_to t('task_do_kill') , task_path(task), method: :delete, data:{ confirm: t('task_do_sure') } %>
       </li>
     <% end %>
   </ul>
 
-    <%= link_to :增加新任務 , new_task_path %>
+    <%= link_to t('task_do_add') , new_task_path %>
 
 <% flash.each do |type, msg| %>
   <div>
