@@ -1,0 +1,10 @@
+<h1>我的任務: <%= @task.name %></h1>
+  <div>
+    <%= @task.due_date %>
+  </div>
+  <div>
+    <%= simple_format(@task.note) %>
+  </div>
+  <div>
+    <%= link_to t('hp') , tasks_path %>
+  </div>

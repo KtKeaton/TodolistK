@@ -1,4 +1,6 @@
 class TasksController < ApplicationController
+  before_action :find_task, only: [:show, :edit, :update, :destroy]
+  
   def home
     @tasks = Task.all.order("created_at desc")
   end
