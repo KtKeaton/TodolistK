@@ -44,7 +44,7 @@ class TasksController < ApplicationController
   end
 
   def search
-    @tasks = Task.all.order("updated_at desc").search(params[:search])
+    @tasks = Task.search(params[:search])
   end
 
 private

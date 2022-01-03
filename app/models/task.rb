@@ -6,9 +6,9 @@ class Task < ApplicationRecord
 
   def self.search(search) 
     if search
-      where(['name LIKE ?', "%#{search}%"]) 
+      find(:all, :conditions => ['name LIKE ?', "%#{search}%"])
     else
-      all
+      find(:all)
     end
   end
 end
