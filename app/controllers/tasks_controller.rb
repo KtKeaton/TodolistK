@@ -44,8 +44,8 @@ class TasksController < ApplicationController
   end
 
   def search
-    if params[:search]
-      @task = Task.where('name LIKE?', "%#{params[:search]}%")
+    if params[:name]
+      @task = Task.where('name LIKE?',"%#{params[:name]}%")
     else
       @task = Task.all
     end
