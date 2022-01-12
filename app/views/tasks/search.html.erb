@@ -1,7 +1,7 @@
 <div>
-  <h2>搜尋任務（試）</h2>
-  <%= form_tag(search_tasks_path, :method=> "get") do %>
-    <%= text_field_tag :search, params[:search], placeholder: "Search..." %>
-    <%= submit_tag "Search" ,:name=> nil %>
+  <h2>TRY TO SEARCH</h2>
+  <%= form_tag search_tasks_path, method: :get do %>
+    <%= text_field_tag :name, params[:search], placeholder: "Search my task" %>
+    <%= submit_tag "Search Now", name: nil %>
   <% end %>
 </div>
