@@ -4,9 +4,9 @@ class Task < ApplicationRecord
   has_many :categories, through: :category_tasks
 	belongs_to :user, foreign_key: true, optional: true
 
-  	def self.search(search) 
+  def self.search(search)
 	  if search
-	    where(['title LIKE ?', "%#{search}%"]) 
+	    where(['name = LIKE ?', "%#{search}%"])
 	  else
 	    all 
 	  end

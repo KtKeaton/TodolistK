@@ -44,12 +44,11 @@ class TasksController < ApplicationController
   end
 
   def search
-    @task = Task.search(params[:name])
-    # if params[:name]
-    #   @task = Task.where('LOWER(name) LIKE?', "%#{params[:name].downcase}%")
-    # else
-    #   @task = Task.all
-    # end
+    if params[:name]
+      @task = Task.search(params[:name]).order("created_at DESC")
+    else
+      @task = Task.all
+    end
   end
 
 private
