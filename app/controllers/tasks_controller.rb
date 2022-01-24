@@ -45,7 +45,7 @@ class TasksController < ApplicationController
 
   def search
     if params[:name]
-      @task = Task.search(params[:name]).order("created_at DESC")
+      @task = Task.where("name LIKE '%#{params[:name]}%'")
     else
       @task = Task.all
     end
