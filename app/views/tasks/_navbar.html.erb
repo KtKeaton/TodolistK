@@ -3,4 +3,10 @@
   <%= link_to t('user_login') , '#' %>
   <%= link_to "中文版" , :controller=> controller_name, :action => action_name, :locale => "zh-TW" %>
   <%= link_to "English" , :controller=> controller_name, :action => action_name, :locale => "en" %>
+  <%= form_tag root_path, :method=> 'get' do %>
+    <p>
+      <%= text_field_tag :name, params[:name] %>
+        <%= submit_tag "Search" , :name=> nil %>
+    </p>
+    <% end %>
 </div>
