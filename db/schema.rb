@@ -33,7 +33,7 @@ ActiveRecord::Schema.define(version: 2021_12_03_133916) do
   create_table "tasks", force: :cascade do |t|
     t.string "name"
     t.text "note"
-    t.datetime "due_date"
+    t.datetime "due_date" 
     t.integer "priority"
     t.integer "status"
     t.bigint "user_id"

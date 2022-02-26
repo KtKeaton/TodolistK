@@ -1,7 +1,0 @@
-<div>
-  <h2>搜尋任務（試）</h2>
-  <%= form_tag(search_tasks_path, :method=> "get") do %>
-    <%= text_field_tag :search, params[:search], placeholder: "Search..." %>
-    <%= submit_tag "Search" ,:name=> nil %>
-  <% end %>
-</div>

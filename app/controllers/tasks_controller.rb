@@ -3,6 +3,11 @@ class TasksController < ApplicationController
   
   def home
     @tasks = Task.all.order("created_at desc")
+    if params[:name]
+      @tasks = Task.where("name LIKE ?", "%#{params[:name]}%")
+    else
+      @tasks = Task.all
+    end
   end
 
   def new
@@ -41,10 +46,6 @@ class TasksController < ApplicationController
     else
       redirect_to tasks_url, :notice => I18n.t(:task_close)
     end
-  end
-
-  def search
-    @tasks = Task.search(params[:search])
   end
 
 private
