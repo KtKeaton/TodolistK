@@ -54,6 +54,6 @@ private
   end
 
   def task_params
-    params.require(:task).permit(:name, :due_date, :note)
+    params.require(:task).permit(:name, :due_date, :note, :status, :priority)
   end
 end

@@ -1,0 +1,52 @@
+[33mc17b39f[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m)[m HEAD@{0}: pull: Fast-forward
+[33m4fc83ef[m HEAD@{1}: pull: Fast-forward
+[33m1a6c922[m HEAD@{2}: checkout: moving from feat/search to master
+[33m52458f5[m[33m ([m[1;31morigin/feat/search[m[33m, [m[1;32mfeat/search[m[33m)[m HEAD@{3}: commit: resolve conflict
+[33m0b7b60c[m HEAD@{4}: commit (merge): resolve conflict
+[33ma314b55[m HEAD@{5}: checkout: moving from master to feat/search
+[33m1a6c922[m HEAD@{6}: commit: Integrated
+[33m81b407f[m HEAD@{7}: pull origin master: Fast-forward
+[33m5f52295[m HEAD@{8}: checkout: moving from feat/search to master
+[33ma314b55[m HEAD@{9}: commit: 搜尋任務navbar整合
+[33m3b4ee5b[m HEAD@{10}: commit: 修正首頁連結＆調整search語法
+[33m043ffd5[m HEAD@{11}: commit: Install AASM
+[33m8f4741d[m HEAD@{12}: commit: WIP 搜尋任務
+[33m42b0338[m HEAD@{13}: commit: WIP 搜尋任務
+[33m6c08c1d[m HEAD@{14}: commit: WIP 任務搜尋
+[33m1016f21[m HEAD@{15}: commit: WIP 任務搜尋
+[33md1d5b41[m HEAD@{16}: commit: WIP 任務搜尋
+[33m5f52295[m HEAD@{17}: checkout: moving from master to feat/search
+[33m5f52295[m HEAD@{18}: pull origin master: Fast-forward
+[33m33a4192[m HEAD@{19}: checkout: moving from feat/Spec to master
+[33m2509acd[m[33m ([m[1;32mfeat/Spec[m[33m)[m HEAD@{20}: commit: WIP 測試
+[33m218e197[m[33m ([m[1;31morigin/feat/Spec[m[33m)[m HEAD@{21}: commit: WIP 測試
+[33m33a4192[m HEAD@{22}: checkout: moving from master to feat/Spec
+[33m33a4192[m HEAD@{23}: checkout: moving from topic to master
+[33ma54fc3b[m[33m ([m[1;31morigin/topic[m[33m, [m[1;32mtopic[m[33m)[m HEAD@{24}: commit: 設置Controller之過濾器
+[33m43706c9[m HEAD@{25}: commit: 任務內容show之渲染
+[33m56d01b0[m HEAD@{26}: checkout: moving from master to topic
+[33m33a4192[m HEAD@{27}: pull origin master: Fast-forward
+[33m8bfbf28[m HEAD@{28}: checkout: moving from feat/Rank to master
+[33mfc7cb4d[m[33m ([m[1;31morigin/feat/Rank[m[33m, [m[1;32mfeat/Rank[m[33m)[m HEAD@{29}: commit: WIP 修正擴充前錯誤code
+[33mf8ee9a7[m HEAD@{30}: commit: WIP 擴充排序機能
+[33m56d01b0[m HEAD@{31}: checkout: moving from topic to feat/Rank
+[33m56d01b0[m HEAD@{32}: reset: moving to HEAD^
+[33m4dea2be[m HEAD@{33}: checkout: moving from master to topic
+[33m8bfbf28[m HEAD@{34}: checkout: moving from topic to master
+[33m4dea2be[m HEAD@{35}: checkout: moving from feat/Rank to topic
+[33m56d01b0[m HEAD@{36}: checkout: moving from topic to feat/Rank
+[33m4dea2be[m HEAD@{37}: commit: WIP 以ranked-model排序任務
+[33m56d01b0[m HEAD@{38}: commit: 任務列表以建立時間排序
+[33mf1c533e[m HEAD@{39}: commit: 完成i18n設置
+[33mf722596[m HEAD@{40}: commit: WIP 修正i18n語法
+[33m4af8a4a[m HEAD@{41}: commit: WIP 修正i18n英語字典
+[33me6ba83f[m HEAD@{42}: commit: WIP 修正i18n設置
+[33m8a9c2ec[m HEAD@{43}: commit: 安裝i18n功能、設置台北時區
+[33mb05b8e0[m HEAD@{44}: commit: 暫時關閉User必填
+[33m718786d[m HEAD@{45}: commit: 確立Task之CRUD
+[33m7cbfea4[m HEAD@{46}: commit: 確立Model一對多、多對多關係及其驗證
+[33md24dcd2[m HEAD@{47}: commit: 安裝PostgreSQL
+[33mb3958da[m HEAD@{48}: commit: 建立Model關係及任務Controller
+[33m8bfbf28[m HEAD@{49}: checkout: moving from master to topic
+[33m8bfbf28[m HEAD@{50}: Branch: renamed refs/heads/master to refs/heads/master
+[33m8bfbf28[m HEAD@{52}: commit (initial): 專案開始

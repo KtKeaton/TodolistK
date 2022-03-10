@@ -19,6 +19,11 @@
       </div>
 
       <div>
+        <%= form.label :status, t('task_status') %>
+        <%= form.select :status, Task::STATUS, {include_blank: "All status" } %>
+      </div>
+
+      <div>
         <%= form.label :note, t('task_cont') %>
           <%= form.text_field :note %>
       </div>

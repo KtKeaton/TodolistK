@@ -3,6 +3,7 @@ zh-TW:
   task_close: "任務已過期，不可刪除"
   task_list: "我的任務列表"
   task_cont: "任務內容"
+  task_status: "任務狀態"
   task_do_edit: "編輯任務"
   task_do_kill: "刪除任務"
   task_do_sure: "確定嗎"
