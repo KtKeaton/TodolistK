@@ -20,7 +20,7 @@
 
       <div>
         <%= form.label :status, t('task_status') %>
-        <%= form.select :status, Task.statuses, {include_blank: "All status" } %>
+        <%= form.select :status, Task.statuses, {include_blank: t('all_status') } %>
       </div>
 
       <div>

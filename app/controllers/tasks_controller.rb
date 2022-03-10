@@ -54,6 +54,8 @@ private
   end
 
   def task_params
-    params.require(:task).permit(:name, :due_date, :note, :status, :priority)
+    p = params.require(:task).permit(:name, :due_date, :note, :priority)
+    p[:status] = params[:task][:status].to_i
+    return p
   end
 end

@@ -4,6 +4,7 @@ en:
   task_list: "My Mission(s) Index"
   task_cont: "Content"
   task_status: "Mission status"
+  all_status: "Mission Report December 16th, 1991"
   task_do_edit: "Edit"
   task_do_kill: "Delete"
   task_do_sure: "Are you sure?"
