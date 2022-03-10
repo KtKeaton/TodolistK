@@ -4,4 +4,9 @@ class Task < ApplicationRecord
   has_many :categories, through: :category_tasks
 	belongs_to :user, foreign_key: true, optional: true
   enum status: { waiting: 0, carry_on: 1, finished: 2 }
+
+  def self.i18n_status(hash = {})
+    statuses.keys.each { |key| hash[I18n.t("checkpoint_status.#{key}")] = key }
+    hash
+  end
 end
