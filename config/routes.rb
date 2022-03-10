@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :tasks, path: "togo" do
+  resources :tasks, path: "mission_possible" do
 
   end
   root "tasks#home"
