@@ -25,6 +25,7 @@ class TasksController < ApplicationController
 
   def show
     @task = find_task
+    @tasks = Task.all.order("created_at desc")
   end
 
   def edit
