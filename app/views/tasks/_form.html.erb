@@ -1,12 +1,4 @@
 <%= form_for(task) do |form| %>
-  <% if @task.errors.present? %>
-    <ol>
-      <% @task.errors.each do |error, message| %>
-        <li>WARNING: <%= "#{error.capitalize}  #{message}" %>
-        </li>
-        <% end %>
-    </ol>
-  <% end %>
 
       <div>
         <%= form.label :name, t('task_title') %>
@@ -31,4 +23,16 @@
       <div>
         <%= form.submit t('task_save') %>
       </div>
-<% end %>
+
+      <% if @task.errors.present? %>
+        <ol>
+        <% @task.errors.each do |error, message| %>
+          <li>WARNING: <%= "#{error.capitalize}  #{message}" %>
+           </li>
+           <% end %>
+       </ol>
+      <% end %>
+
+    <% end %>
+<br />
+<%= link_to t('hp') , tasks_path %>

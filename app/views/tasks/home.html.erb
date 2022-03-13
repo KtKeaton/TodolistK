@@ -4,7 +4,7 @@
 <div>
   <%= form_tag root_path, :method=> 'get' do %>
   <p>
-    <%= text_field_tag :name, params[:name] %>
+    <%= text_field_tag :name, params[:name] %>  <!-- also "text_field" -->
       <%= submit_tag "Search" , :name=> nil %>
   </p>
   <% end %>
