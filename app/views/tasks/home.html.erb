@@ -1,6 +1,14 @@
 <div>
   <%= render "navbar" %>
 </div>
+<div>
+  <%= form_tag root_path, :method=> 'get' do %>
+  <p>
+    <%= text_field_tag :name, params[:name] %>
+      <%= submit_tag "Search" , :name=> nil %>
+  </p>
+  <% end %>
+</div>
 
 <h1><%= t('task_list') %></h1>
   <ul>
