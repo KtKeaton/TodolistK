@@ -1,27 +1,27 @@
-<%= form_for(task) do |form| %>
+<%= form_for(task) do |f| %> <!-- f variable makes <input> on each "field" or "submit" method -->
 
       <div>
-        <%= form.label :name, t('task_title') %>
-          <%= form.text_field :name %>
+        <%= f.label :name, t('task_title') %>
+          <%= f.text_field :name %>
       </div>
 
       <div>
-        <%= form.label :due_date, t('task_date') %>
-          <%= form.datetime_field :due_date %>
+        <%= f.label :due_date, t('task_date') %>
+          <%= f.datetime_field :due_date %>
       </div>
 
       <div>
-        <%= form.label :status, t('task_status') %>
-        <%= form.select :status, Task.i18n_status, {include_blank: t('all_status') } %>
+        <%= f.label :status, t('task_status') %>
+        <%= f.select :status, Task.i18n_status, {include_blank: t('all_status') } %>
       </div>
 
       <div>
-        <%= form.label :note, t('task_cont') %>
-          <%= form.text_field :note %>
+        <%= f.label :note, t('task_cont') %>
+          <%= f.text_field :note %>
       </div>
 
       <div>
-        <%= form.submit t('task_save') %>
+        <%= f.submit t('task_save') %>
       </div>
 
       <% if @task.errors.present? %>
