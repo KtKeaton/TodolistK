@@ -43,9 +43,9 @@ class TasksController < ApplicationController
 
     if Time.now < find_task.due_date
       @task.destroy
-      redirect_to tasks_path, :notice => I18n.t(:task_kill)
+      redirect_to root_path, :notice => I18n.t(:task_kill)
     else
-      redirect_to tasks_path, :notice => I18n.t(:task_close)
+      redirect_to root_path, :notice => I18n.t(:task_close)
     end
   end
 

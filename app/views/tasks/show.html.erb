@@ -3,6 +3,10 @@
     <%= @task.due_date %>
   </div>
   <div>
+    <%= t('task_status') %>：<%= @task.status %>
+  </div>
+  <div>
+    <%= t('task_cont') %>：
     <%= simple_format(@task.note) %>
   </div>
   <div>
