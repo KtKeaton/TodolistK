@@ -1,5 +1,15 @@
 <%= form_for(task) do |f| %> <!-- f variable makes <input> on each "field" or "submit" method -->
 
+    <% if @task.errors.present? %>
+      <ol>
+       <% @task.errors.each do |error, message| %>
+        <li>WARNING: 
+          <%= "#{error.capitalize}  #{message}" %>
+        </li>
+         <% end %>
+      </ol>
+    <% end %>
+
       <div>
         <%= f.label :name, t('task_title') %>
           <%= f.text_field :name %>
@@ -24,15 +34,6 @@
         <%= f.submit t('task_save') %>
       </div>
 
-      <% if @task.errors.present? %>
-        <ol>
-        <% @task.errors.each do |error, message| %>
-          <li>WARNING: <%= "#{error.capitalize}  #{message}" %>
-           </li>
-           <% end %>
-       </ol>
-      <% end %>
-
     <% end %>
-<br />
+<p>
 <%= link_to t('hp') , tasks_path %>

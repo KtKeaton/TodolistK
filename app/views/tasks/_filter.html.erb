@@ -1,0 +1,5 @@
+<form id="filter" action="/" method="post">
+  狀態: <%= collection_select(:filter, :status_name, @status_names, :status, prompt: true) %>
+  <button type="submit">篩選</button>
+  <a href="/" class="btn btn-default">重設</a>
+</form>

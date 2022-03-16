@@ -3,6 +3,7 @@ class TasksController < ApplicationController
   
   def index
     @tasks = Task.all.order("created_at desc")
+    @status_name = Task.distinct(:status).order(:status)
     if params[:name]
       @tasks = Task.where("name LIKE ?", "%#{params[:name]}%")
     else
