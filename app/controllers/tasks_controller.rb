@@ -5,7 +5,7 @@
     @tasks = Task.all.order("created_at desc")
     # if params[:name]
     #   @tasks = Task.where("name LIKE ?", "%#{params[:name]}%")
-    # else
+    # else  
     #   @tasks = Task.all
     # end
 
@@ -13,7 +13,7 @@
     @tasks = @name.result
   end
 
-  def ransackable_scopes(auth_object = nil)
+  def ransackable_scopes(auth_objec t = nil)
     []
   end
 
