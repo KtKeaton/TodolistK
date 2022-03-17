@@ -1,13 +1,20 @@
-class TasksController < ApplicationController
+  class TasksController < ApplicationController
   before_action :find_task, only: [:show, :edit, :update, :destroy]
   
   def index
     @tasks = Task.all.order("created_at desc")
-    if params[:name]
-      @tasks = Task.where("name LIKE ?", "%#{params[:name]}%")
-    else
-      @tasks = Task.all
-    end
+    # if params[:name]
+    #   @tasks = Task.where("name LIKE ?", "%#{params[:name]}%")
+    # else
+    #   @tasks = Task.all
+    # end
+
+    @name = Task.ransack(name_cont: params[:q])
+    @tasks = @name.result
+  end
+
+  def ransackable_scopes(auth_object = nil)
+    []
   end
 
   def new
@@ -17,7 +24,7 @@ class TasksController < ApplicationController
   def create
     @task = Task.new(task_params)
     if @task.save
-      redirect_to tasks_path
+      redirect_to 6
     else
       render :new
     end
@@ -43,9 +50,9 @@ class TasksController < ApplicationController
 
     if Time.now < find_task.due_date
       @task.destroy
-      redirect_to root_path, :notice => I18n.t(:task_kill)
+      redirect_to tasks_path, :notice => I18n.t(:task_kill)
     else
-      redirect_to root_path, :notice => I18n.t(:task_close)
+      redirect_to tasks_path, :notice => I18n.t(:task_close)
     end
   end
 

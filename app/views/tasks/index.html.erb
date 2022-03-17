@@ -1,14 +1,20 @@
 <div>
   <%= render "navbar" %>
 </div>
-<div>
+<!-- <div>
   <%= form_tag root_path, :method=> 'get' do %>
   <p>
-    <%= text_field_tag :name, params[:name] %>  <!-- also "text_field" -->
+    <%= text_field_tag :name, params[:name] %>
       <%= submit_tag "Search" , :name=> nil %>
   </p>
   <% end %>
-</div>
+</div> -->
+
+<%= search_form_for @name do |f| %>
+  <%= f.label "Search for Mission Name" %>
+  <%= f.search_field :name %>
+  <%= f.submit %>
+<% end %>
 
 <h1><%= t('task_list') %></h1>
   <ul>
