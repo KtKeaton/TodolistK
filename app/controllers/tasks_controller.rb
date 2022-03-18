@@ -2,7 +2,7 @@
   before_action :find_task, only: [:show, :edit, :update, :destroy]
   
   def index
-    @tasks = Task.all.order("created_at desc")
+    # @tasks = Task.all.order("created_at desc")
     # if params[:name]
     #   @tasks = Task.where("name LIKE ?", "%#{params[:name]}%")
     # else  
@@ -11,10 +11,7 @@
 
     @name = Task.ransack(name_cont: params[:q])
     @tasks = @name.result
-  end
-
-  def ransackable_scopes(auth_objec t = nil)
-    []
+    puts @tasks
   end
 
   def new

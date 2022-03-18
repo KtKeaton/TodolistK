@@ -11,7 +11,7 @@
 </div> -->
 
 <%= search_form_for @name do |f| %>
-  <%= f.label "Search for" %>
+  <%= f.label :name, "Search for" %>
   <%= f.search_field :name, placeholder: "Mission Name" %>
   <%= f.submit %>
 <% end %>
