@@ -9,7 +9,7 @@
     #   @tasks = Task.all
     # end
 
-    @name = Task.ransack(name_cont: params[:q][:name])
+    @name = Task.ransack(name_cont: params[:q] && params[:q][:name])
     @tasks = @name.result
     puts @tasks
   end
