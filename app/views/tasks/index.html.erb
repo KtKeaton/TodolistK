@@ -1,14 +1,20 @@
 <div>
   <%= render "navbar" %>
 </div>
-<div>
+<!-- <div>
   <%= form_tag root_path, :method=> 'get' do %>
   <p>
-    <%= text_field_tag :name, params[:name] %>  <!-- also "text_field" -->
+    <%= text_field_tag :name, params[:name] %>
       <%= submit_tag "Search" , :name=> nil %>
   </p>
   <% end %>
-</div>
+</div> -->
+
+<%= search_form_for @name do |f| %>
+  <%= f.label :name, "Search for" %>
+  <%= f.search_field :name, placeholder: "Mission Name" %>
+  <%= f.submit %>
+<% end %>
 
 <div>
   <%= render "filter" %>
