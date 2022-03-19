@@ -22,7 +22,7 @@
 
       <div>
         <%= f.label :status, t('task_status') %>
-        <%= f.select :status, Task.i18n_status, {include_blank: t('all_status') } %>
+        <%= f.select :status, Task.i18n_status %>
       </div>
 
       <div>

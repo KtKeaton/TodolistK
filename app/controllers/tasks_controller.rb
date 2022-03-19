@@ -21,7 +21,7 @@
   def create
     @task = Task.new(task_params)
     if @task.save
-      redirect_to 6
+      redirect_to tasks_path
     else
       render :new
     end
