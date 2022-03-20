@@ -1,6 +1,20 @@
 <div>
   <%= render "navbar" %>
 </div>
+<!-- <div>
+  <%= form_tag root_path, :method=> 'get' do %>
+  <p>
+    <%= text_field_tag :name, params[:name] %>
+      <%= submit_tag "Search" , :name=> nil %>
+  </p>
+  <% end %>
+</div> -->
+
+<%= search_form_for @name do |f| %>
+  <%= f.label :name, "Search for" %>
+  <%= f.search_field :name, placeholder: "Mission Name" %>
+  <%= f.submit %>
+<% end %>
 
 <h1><%= t('task_list') %></h1>
   <ul>
@@ -16,7 +30,6 @@
   </ul>
 
     <%= link_to t('task_do_add') , new_task_path %>
-    <%= link_to "搜尋(試)" , root_path %>
 
 <% flash.each do |type, msg| %>
   <div>

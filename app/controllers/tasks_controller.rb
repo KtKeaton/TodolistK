@@ -1,23 +1,27 @@
-class TasksController < ApplicationController
+  class TasksController < ApplicationController
   before_action :find_task, only: [:show, :edit, :update, :destroy]
   
-  def home
-    @tasks = Task.all.order("created_at desc")
-    if params[:name]
-      @tasks = Task.where("name LIKE ?", "%#{params[:name]}%")
-    else
-      @tasks = Task.all
-    end
+  def index
+    # @tasks = Task.all.order("created_at desc")
+    # if params[:name]
+    #   @tasks = Task.where("name LIKE ?", "%#{params[:name]}%")
+    # else  
+    #   @tasks = Task.all
+    # end
+
+    @name = Task.ransack(name_cont: params[:q] && params[:q][:name])
+    @tasks = @name.result
+    puts @tasks
   end
 
   def new
-    @task = Task.new  
+    @task = Task.new
   end
 
   def create
     @task = Task.new(task_params)
     if @task.save
-      redirect_to root_path
+      redirect_to 6
     else
       render :new
     end
@@ -25,6 +29,7 @@ class TasksController < ApplicationController
 
   def show
     @task = find_task
+    @tasks = Task.all.order("created_at desc")
   end
 
   def edit
@@ -40,11 +45,11 @@ class TasksController < ApplicationController
   def destroy
     @task = find_task
 
-    if Time.now < find_task.date
+    if Time.now < find_task.due_date
       @task.destroy
-      redirect_to tasks_url, :notice => I18n.t(:task_kill)
+      redirect_to tasks_path, :notice => I18n.t(:task_kill)
     else
-      redirect_to tasks_url, :notice => I18n.t(:task_close)
+      redirect_to tasks_path, :notice => I18n.t(:task_close)
     end
   end
 

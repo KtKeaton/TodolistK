@@ -34,8 +34,8 @@ ActiveRecord::Schema.define(version: 2022_03_10_135003) do
     t.string "name"
     t.text "note"
     t.datetime "due_date"
-    t.integer "priority"
     t.integer "status", limit: 2, default: 0
+    t.integer "priority"
     t.bigint "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
