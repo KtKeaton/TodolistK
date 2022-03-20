@@ -17,17 +17,40 @@
 <% end %>
 
 <h1><%= t('task_list') %></h1>
-  <ul>
-    <% @tasks.each do |task| %>
-      <li>
-        <%= task.name %>
-        <%= t('task_status') %>：<%= task.status %>
-          <%= link_to t('task_cont') , task_path(task) %>
+<table>
+  <thead>
+    <tr>
+      <th>
+        <%= sort_link(@name, :name) %>
+      </th>
+      <th>Status</th>
+      <th>Contents</th>
+      <th colspan="2"></th>
+    </tr>
+  </thead>
+
+    <tbody>
+      <% @tasks.each do |task| %>
+        <tr>
+          <td>
+            <%= task.name %>
+          </td>
+          <td>
+            <%= t('task_status') %>：<%= task.status %>
+          </td>
+          <td>
+            <%= link_to t('task_cont') , task_path(task) %>
+          </td>
+          <td>
             <%= link_to t('task_do_edit') , edit_task_path(task) %>
+          </td>
+          <td>
             <%= link_to t('task_do_kill') , task_path(task), method: :delete, data:{ confirm: t('task_do_sure') } %>
-      </li>
-    <% end %>
-  </ul>
+          </td>
+        </tr>
+        <% end %>
+    </tbody>
+    </table>
 
     <%= link_to t('task_do_add') , new_task_path %>
 
