@@ -22,7 +22,7 @@
 
       <div>
         <%= f.label :status, t('task_status') %>
-        <%= f.select :status, Task.i18n_status %>
+        <%= f.select :status, options_for_select(Task.statuses.map { |key, value| [key.capitalize, value] }, @task.status)%>
       </div>
 
       <div>

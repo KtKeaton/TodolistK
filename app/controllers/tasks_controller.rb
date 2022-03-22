@@ -18,10 +18,20 @@
 
   def new
     @task = Task.new
+    @status = Task.statuses
+
+    if @status = "waiting"
+      Task.waiting
+    elsif @status = "carry_on"
+      Task.carry_on
+    elsif @status = "finished"
+      Task.finished
+    end
   end
 
   def create
     @task = Task.new(task_params)
+
     if @task.save
       redirect_to tasks_path
     else
