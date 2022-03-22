@@ -23,6 +23,7 @@
       <th><%= sort_link(@query, t('task_name')) %></th>
       <th><%= t('task_status') %></th>
       <th><%= t('task_created') %></th>
+      <th><%= t('task_ends') %></th>
       <th><%= t('task_actions') %></th>
       <th colspan="2"></th>
     </tr>
@@ -39,6 +40,9 @@
           </td>
           <td>
             <%= task.created_at.strftime("%b %d %R") %>
+          </td>
+          <td>
+            <%= task.due_date %>
           </td>
           <td>
             <%= link_to t('task_cont') , task_path(task) %>

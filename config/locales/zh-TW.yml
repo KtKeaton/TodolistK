@@ -6,6 +6,7 @@ zh-TW:
   task_cont: "任務內容"
   task_status: "任務狀態"
   task_created: "任務開始於"
+  task_ends: "任務結束於"
   task_actions: "採取行動"
   all_status: "選擇任務狀態"
   checkpoint_status:
