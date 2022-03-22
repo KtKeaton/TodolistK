@@ -18,15 +18,6 @@
 
   def new
     @task = Task.new
-    @status = Task.statuses
-
-    if @status = "waiting"
-      Task.waiting
-    elsif @status = "carry_on"
-      Task.carry_on
-    elsif @status = "finished"
-      Task.finished
-    end
   end
 
   def create
