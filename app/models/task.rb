@@ -1,5 +1,5 @@
 class Task < ApplicationRecord
-  validates :name, :note, presence: true
+  validates :name, :note, :due_date, presence: true
   has_many :category_tasks
   has_many :categories, through: :category_tasks
 	belongs_to :user, foreign_key: true, optional: true
@@ -8,5 +8,9 @@ class Task < ApplicationRecord
   def self.i18n_status(hash = {})
     statuses.keys.each { |key| hash[I18n.t("checkpoint_status.#{key}")] = key }
     hash
+  end
+
+  ransacker :status, formatter: proc {|v| statuses[v]} do |parent|
+    parent.table[:status]
   end
 end
