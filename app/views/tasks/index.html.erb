@@ -10,9 +10,9 @@
   <% end %>
 </div> -->
 
-<%= search_form_for @name do |f| %>
+<%= search_form_for @query do |f| %>
   <%= f.label :name, "Search for" %>
-  <%= f.search_field :name, placeholder: "Mission Name" %>
+  <%= f.search_field :name_cont, placeholder: "Mission Name" %>
   <%= f.submit %>
 <% end %>
 
@@ -20,10 +20,8 @@
 <table>
   <thead>
     <tr>
-      <th>
-        <%= sort_link(@name, :name) %>
-      </th>
-      <th>Status</th>
+      <th><%= sort_link(@query, t('task_name')) %></th>
+      <th><%= t('task_status') %></th>
       <th>Contents</th>
       <th colspan="2"></th>
     </tr>
@@ -34,9 +32,9 @@
         <tr>
           <td>
             <%= task.name %>
-          </td>
+          </td> 
           <td>
-            <%= t('task_status') %>：<%= task.status %>
+            <%= task.status %>
           </td>
           <td>
             <%= link_to t('task_cont') , task_path(task) %>
