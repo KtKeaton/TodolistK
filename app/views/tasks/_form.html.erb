@@ -22,7 +22,8 @@
 
       <div>
         <%= f.label :status, t('task_status') %>
-        <%= f.select :status, options_for_select(Task.statuses.map { |key, value| [key.capitalize, value] }, @task.status)%>
+        <%= f.select :status, options_for_select(Task.statuses.map { |key, value| [t("checkpoint_status.#{key}"), value] },
+          @task.status)%>
       </div>
 
       <div>

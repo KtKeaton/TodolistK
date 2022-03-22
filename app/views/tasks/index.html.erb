@@ -36,7 +36,7 @@
             <%= task.name %>
           </td> 
           <td>
-            <%= task.status %>
+            <%= t("checkpoint_status.#{task.status}") %>
           </td>
           <td>
             <%= task.created_at.strftime("%b %d %R") %>
