@@ -9,9 +9,11 @@
     #   @tasks = Task.all
     # end
 
-    @name = Task.ransack(name_cont_any: params.dig(:q,:name))
-    @tasks = @name.result
-    puts @tasks
+    # @name = Task.ransack(params[:name], search_key: :name)
+    # @tasks = @name.result
+    
+    @query = Task.ransack(params[:q])
+    @tasks = @query.result
   end
 
   def new
