@@ -27,7 +27,7 @@
 
       <div>
         <%= f.label :priority, t('task_priority') %>
-        <%= f.select :priority, Task.priorities.map { |key, value| [key.humanize, key] }, {prompt: "Select..." },
+        <%= f.select :priority, Task.priorities.map { |key, value| [t("checkpoint_priority.#{key}"), key] }, 
           class: "form-control" %>
       </div>
 
