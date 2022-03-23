@@ -5,6 +5,11 @@ en:
   task_name: "Mission name"
   task_cont: "Content"
   task_status: "Mission status"
+  task_priority: "Misstion priority"
+  checkpoint_priority:
+    high: "High"
+    medium: "Medium"
+    low: "Low"
   task_created: "Mission start at"
   task_ends: "Mission ends at"
   task_actions: "Take action!"
