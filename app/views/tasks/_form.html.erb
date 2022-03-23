@@ -26,6 +26,12 @@
       </div>
 
       <div>
+        <%= f.label :priority, t('task_priority') %>
+        <%= f.select :priority, Task.priorities.map { |key, value| [key.humanize, key] }, {prompt: "Select..." },
+          class: "form-control" %>
+      </div>
+
+      <div>
         <%= f.label :note, t('task_cont') %>
           <%= f.text_area :note %>
       </div>

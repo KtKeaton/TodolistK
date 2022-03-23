@@ -22,6 +22,7 @@
     <tr>
       <th><%= sort_link(@query, t('task_name')) %></th>
       <th><%= t('task_status') %></th>
+      <th><%= t('task_priority') %></th>
       <th><%= t('task_created') %></th>
       <th><%= t('task_ends') %></th>
       <th><%= t('task_actions') %></th>
@@ -38,6 +39,9 @@
           </td> 
           <td>
             <%= t("checkpoint_status.#{task.status}") %>
+          </td>
+          <td>
+            <%= t("checkpoint_priority.#{task.priority}") %>
           </td>
           <td>
             <%= task.created_at.strftime("%b %d %R") %>
