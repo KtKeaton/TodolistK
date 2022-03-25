@@ -4,7 +4,7 @@ class SessionsController < ApplicationController
 
   def create
     pw = user_params[:password]
-    salted_pw = "xyz#{pw}827128#{pw}82-12j23h"
+    salted_pw = "eiojre#{pw}rewropwr"
     hashed_password = Digest::SHA1.hexdigest(salted_pw)
 
     user = User.find_by(email: user_params[:email],
