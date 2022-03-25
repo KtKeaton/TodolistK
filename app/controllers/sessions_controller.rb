@@ -1,3 +1,5 @@
+require 'digest'
+
 class SessionsController < ApplicationController
 
   def create
