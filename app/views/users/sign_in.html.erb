@@ -12,4 +12,10 @@
   </div>
 
   <%= f.submit "Login" %>
-    <% end %>
+<% end %>
+
+<% flash.each do |type, msg| %>
+  <div>
+    <%= msg %>
+  </div>
+  <% end %>

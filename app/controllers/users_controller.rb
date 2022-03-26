@@ -14,7 +14,7 @@ class UsersController < ApplicationController
     if @user.save
         redirect_to "/"
     else
-        render :sign_up
+        render :sign_up, :notice => "註冊失敗"
     end
   end
 
@@ -23,7 +23,7 @@ class UsersController < ApplicationController
 
   private
     def user_params
-      params.require(:user).permit(:role, :password, :password_confirmation, :email)
+      params.require(:user).permit(:role, :password, :email)
     end 
 
 end
