@@ -4,7 +4,7 @@ class User < ApplicationRecord
   validates :email, presence: true, uniqueness: true
   validates :password, confirmation: true, length: { minimum: 4 }, presence: true
   validates :role, presence: true, uniqueness: true
-  has_many :task, dependent: :destroy
+  has_many :tasks, dependent: :destroy
 
   before_create :encrypt_password
 

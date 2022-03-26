@@ -1,6 +1,7 @@
 class TasksController < ApplicationController
   before_action :find_task, only: [:show, :edit, :update, :destroy]
   before_action :check_login!, except: [:index, :show]
+  before_action :find_user_task, only: [:edit, :update, :destroy, :publish]
   
   def index
     # @tasks = Task.all.order("created_at desc")
@@ -67,4 +68,10 @@ private
     p[:status] = params[:task][:status].to_i
     return p
   end
+
+  def find_user_task
+		@task = Task.find(params[:id])
+		@task = Task.find_by(id: params[:id], user_id: current_user.id)
+		# @task = current_user.tasks.find(params[:id])
+	end
 end
