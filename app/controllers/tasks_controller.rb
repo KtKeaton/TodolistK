@@ -1,5 +1,6 @@
-  class TasksController < ApplicationController
+class TasksController < ApplicationController
   before_action :find_task, only: [:show, :edit, :update, :destroy]
+  before_action :check_login!, except: [:index, :show]
   
   def index
     # @tasks = Task.all.order("created_at desc")
