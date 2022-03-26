@@ -28,3 +28,4 @@ en:
   user_regi: "Registration"
   user_login: "Login"
   hp: "HomePage"
+  user_pw_wrong: "Wrong password"

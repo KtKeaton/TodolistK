@@ -28,6 +28,7 @@ zh-TW:
   user_regi: "註冊會員"
   user_login: "登入會員"
   hp: "回首頁"
+  user_pw_wrong: "密碼錯誤"
 
   activerecord:
     errors:

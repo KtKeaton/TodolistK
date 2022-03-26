@@ -14,7 +14,7 @@ class SessionsController < ApplicationController
       session[:random2022] = user.id
       redirect_to "/"
     else
-      redirect_to "/users/sign_in", :notice => "密碼錯誤" 
+      redirect_to "/users/sign_in", :notice => I18n.t(:user_pw_wrong)
     end
   end
 
