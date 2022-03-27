@@ -11,7 +11,4 @@ class Task < ApplicationRecord
     hash
   end
 
-  ransacker :status, formatter: proc {|v| statuses[v]} do |parent|
-    parent.table[:status]
-  end
 end
