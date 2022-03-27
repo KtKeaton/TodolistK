@@ -1,10 +1,9 @@
 class TasksController < ApplicationController
   before_action :find_task, only: [:show, :edit, :update, :destroy]
-  before_action :check_login!, except: [:list, :show]
+  before_action :check_login!, except: [:index, :show]
   before_action :find_user_task, only: [:edit, :update, :destroy, :publish]
   
   def list
-    # @tasks = current_user.tasks.order(id: :desc)
     @tasks = current_user.tasks.order(id: :desc)
   end
 
@@ -22,7 +21,8 @@ class TasksController < ApplicationController
   end
 
   def create
-    @task = Task.new(task_params)
+    @task = current_user.tasks.new(task_params)
+    # @space = current_user.spaces.new(space_params)
 
     if @task.save
       redirect_to list_tasks_path
