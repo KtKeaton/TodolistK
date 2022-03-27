@@ -12,7 +12,7 @@ class SessionsController < ApplicationController
 
     if user
       session[:random2022] = user.id
-      redirect_to "/"
+      redirect_to list_tasks_path
     else
       redirect_to "/users/sign_in", :notice => I18n.t(:user_pw_wrong)
     end
