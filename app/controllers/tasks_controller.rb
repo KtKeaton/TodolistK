@@ -1,16 +1,10 @@
 class TasksController < ApplicationController
   before_action :find_task, only: [:show, :edit, :update, :destroy]
-  before_action :check_login!, except: [:index, :show]
+  before_action :check_login!, except: [:list, :show]
   before_action :find_user_task, only: [:edit, :update, :destroy, :publish]
   
-
-  def sign_in
-  
-  end
-
-  def list  
-    # @query = Task.ransack(params[:q])
-    # @tasks = @query.result
+  def list
+    # @tasks = current_user.tasks.order(id: :desc)
     @tasks = current_user.tasks.order(id: :desc)
   end
 
