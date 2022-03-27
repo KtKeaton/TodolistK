@@ -1,5 +1,5 @@
 <div>
-  <%= link_to t('hp') , tasks_path %> |
+  <%= link_to t('hp') , list_tasks_path %> |
   <% if user_signed_in? %>
     <%= link_to "登出" , logout_path, method: "delete" %> |
     <%= current_user.email %>

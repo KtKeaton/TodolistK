@@ -3,19 +3,24 @@ class TasksController < ApplicationController
   before_action :check_login!, except: [:index, :show]
   before_action :find_user_task, only: [:edit, :update, :destroy, :publish]
   
-  def index
-    # @tasks = Task.all.order("created_at desc")
-    # if params[:name]
-    #   @tasks = Task.where("name LIKE ?", "%#{params[:name]}%")
-    # else  
-    #   @tasks = Task.all
-    # end
 
-    # @name = Task.ransack(params[:name], search_key: :name)
-    # @tasks = @name.result
-    
-    @query = Task.ransack(params[:q])
-    @tasks = @query.result
+  def sign_in
+  
+  end
+
+  def list  
+    # @query = Task.ransack(params[:q])
+    # @tasks = @query.result
+    @tasks = current_user.tasks.order(id: :desc)
+  end
+
+  def search
+    @tasks = Task.all.order("created_at desc")
+    if params[:name]
+      @tasks = Task.where("name LIKE ?", "%#{params[:name]}%")
+    else  
+      @tasks = Task.all
+    end
   end
 
   def new
@@ -26,7 +31,7 @@ class TasksController < ApplicationController
     @task = Task.new(task_params)
 
     if @task.save
-      redirect_to tasks_path
+      redirect_to list_tasks_path
     else
       render :new
     end
@@ -52,9 +57,9 @@ class TasksController < ApplicationController
 
     if Time.now < find_task.due_date
       @task.destroy
-      redirect_to tasks_path, :notice => I18n.t(:task_kill)
+      redirect_to list_tasks_path, :notice => I18n.t(:task_kill)
     else
-      redirect_to tasks_path, :notice => I18n.t(:task_close)
+      redirect_to list_tasks_path, :notice => I18n.t(:task_close)
     end
   end
 
@@ -70,8 +75,7 @@ private
   end
 
   def find_user_task
-		@task = Task.find(params[:id])
-		@task = Task.find_by(id: params[:id], user_id: current_user.id)
+    @task = Task.find_by(id: params[:id], user_id: current_user.id)
 		# @task = current_user.tasks.find(params[:id])
 	end
 end
