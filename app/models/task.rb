@@ -10,10 +10,4 @@ class Task < ApplicationRecord
     statuses.keys.each { |key| hash[I18n.t("checkpoint_status.#{key}")] = key }
     hash
   end
-
-  attr_reader :tag_tokens
-
-  def tag_tokens=(tokens)
-    self.tag_ids = Category.get_ids_from_tokens(tokens)
-  end
 end
