@@ -32,6 +32,9 @@
         <%= t('task_actions') %>
       </th>
       <th colspan="2"></th>
+      <th>
+        <%= t('task_tag') %>
+      </th>
     </tr>
   </thead>
 
@@ -62,6 +65,9 @@
         </td>
         <td>
           <%= link_to t('task_do_kill') , task_path(task), method: :delete, data:{ confirm: t('task_do_sure') } %>
+        </td>
+        <td>
+          <%= task.tag_list %>
         </td>
       </tr>
       <% end %>
