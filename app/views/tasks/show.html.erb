@@ -1,15 +1,17 @@
 <%= render "shared/navbar" %>
-<%= t('task_name') %>:<h1><%= @task.name %></h1>
-  <div>
-    <%= @task.due_date %>
+<div class="container">
+  <%= t('task_name') %>:<h1><%= @task.name %></h1>
+    <div>
+      <%= @task.due_date %>
+    </div>
+    <div>
+      <%= t('task_status') %>：<%= t("checkpoint_status.#{@task.status}")%>
+    </div>
+    <div>
+      <%= t('task_cont') %>：
+      <%= simple_format(@task.note) %>
+    </div>
+    <div>
+      <%= link_to t('hp') , list_tasks_path %>
   </div>
-  <div>
-    <%= t('task_status') %>：<%= @task.status %>
-  </div>
-  <div>
-    <%= t('task_cont') %>：
-    <%= simple_format(@task.note) %>
-  </div>
-  <div>
-    <%= link_to t('hp') , list_tasks_path %>
 </div>
