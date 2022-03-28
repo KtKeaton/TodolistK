@@ -10,4 +10,19 @@ class Task < ApplicationRecord
     statuses.keys.each { |key| hash[I18n.t("checkpoint_status.#{key}")] = key }
     hash
   end
+
+  #setter
+  def tag_list=(names)
+    self.categories = names.split(',').map do |item|
+      Category.where(tag: item.strip).first_or_create!
+    end
+  end
+
+  def self.tagged_with(name)
+    Category.find_by!(tag: name).posts
+  end
+
+  def tag_list
+    categories.map(&:tag).join(', ')
+  end
 end
