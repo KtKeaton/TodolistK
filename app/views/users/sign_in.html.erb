@@ -11,15 +11,19 @@
       <div class="col">
         <%= form_for(@user, url: login_path) do |f| %>
           <div class="field">
-            <%= f.label :email %>
+            <%= f.label t('user_email') %>
               <%= f.email_field :email %>
           </div>
           <div class="field">
-            <%= f.label :password %>
+            <%= f.label t('user_pw') %>
               <%= f.password_field :password %>
           </div>
           <%= f.submit "Login" %>
         <% end %>
+        <p>
+          <%= link_to t('nav_signup') , sign_up_users_path %> |
+          <%= link_to "中文版" , :controller=> controller_name, :action => action_name, :locale => "zh-TW" %> |
+          <%= link_to "English" , :controller=> controller_name, :action => action_name, :locale => "en" %>
     </div>
   </div>
 </div>
