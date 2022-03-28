@@ -14,6 +14,10 @@
  *= require_self
  */
 
+.container {
+  padding: 10px;
+}
+
 .container-fluid {
   display: table;
   position: absolute;
@@ -26,11 +30,19 @@
 .row {
   display: table-cell;
   vertical-align: middle;
+  display: flex;
 }
 
 .col {
   margin-left: auto;
   margin-right: auto;
   width: 400px;
-  /* Whatever width you want */
+}
+
+.col-w {
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  flex-direction: row;
+  display: inline-block;
 }

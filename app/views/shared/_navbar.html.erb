@@ -1,13 +1,19 @@
-<div>
-  <%= link_to t('hp') , list_tasks_path %> |
-  <% if user_signed_in? %>
-    <%= link_to "登出" , logout_path, method: "delete" %> |
-    <%= current_user.email %>
-  <% else %>
-    <%= link_to "登入" , sign_in_users_path %> |
-    <%= link_to "註冊" , sign_up_users_path %> |
-  <% end %>
-  <%= link_to "中文版" , :controller=> controller_name, :action => action_name, :locale => "zh-TW" %> |
-  <%= link_to "English" , :controller=> controller_name, :action => action_name, :locale => "en" %>
-
+<div class="container">
+  <div class="row align-items-start">
+    <div class="col-w">
+      <%= image_tag 'logo.fw.png' %>
+    </div>
+    <div class="col-w" style="text-align:right">
+      <%= link_to t('hp') , list_tasks_path %> |
+      <% if user_signed_in? %>
+        <%= link_to "登出" , logout_path, method: "delete" %> |
+        <%= current_user.email %>
+      <% else %>
+        <%= link_to "登入" , sign_in_users_path %> |
+        <%= link_to "註冊" , sign_up_users_path %> |
+      <% end %>
+      <%= link_to "中文版" , :controller=> controller_name, :action => action_name, :locale => "zh-TW" %> |
+      <%= link_to "English" , :controller=> controller_name, :action => action_name, :locale => "en" %>
+    </div>
+  </div>
 </div>
