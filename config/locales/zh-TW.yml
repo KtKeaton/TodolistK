@@ -29,6 +29,7 @@ zh-TW:
   user_login: "登入會員"
   hp: "回列表"
   user_pw_wrong: "密碼錯誤"
+  task_tag: "任務標籤"
 
   activerecord:
     errors:
