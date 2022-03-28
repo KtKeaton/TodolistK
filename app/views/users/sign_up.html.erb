@@ -1,26 +1,28 @@
+<div class="container">
 <h1><%= t('user_regi') %></h1>
-<%= form_for(@user, url: "/users" ) do |f| %>
+  <%= form_for(@user, url: "/users" ) do |f| %>
 
-  <div class="field">
-    <%= f.label :email %>
-    <%= f.email_field :email %>
-  </div>
+    <div class="field">
+      <%= f.label t('user_email') %>
+      <%= f.email_field :email %>
+    </div>
 
-  <div class="field">
-    <%= f.label :password %>
-    <%= f.password_field :password %>
-  </div>
+    <div class="field">
+      <%= f.label t('user_pw') %>
+      <%= f.password_field :password %>
+    </div>
 
-  <div class="field">
-    <%= f.label :password_confirmation %>
-    <%= f.password_field :password_confirmation %>
-  </div>
+    <div class="field">
+      <%= f.label t('user_pw_con') %>
+      <%= f.password_field :password_confirmation %>
+    </div>
 
-  <div class="field">
-    <%= f.label :role %>
-    <%= f.text_field :role %>
-  </div>
+    <div class="field">
+      <%= f.label t('user_role') %>
+      <%= f.text_field :role %>
+    </div>
 
-  <%= f.submit %>
+    <%= f.submit %>
 
-<% end %>
+  <% end %>
+</div>
