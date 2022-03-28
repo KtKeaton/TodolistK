@@ -13,6 +13,8 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :categories, only: [:index]
+
   post "/users/sign_in", to: "sessions#create", as: "login"
 	delete "/users", to: "sessions#destroy", as: "logout"
   
