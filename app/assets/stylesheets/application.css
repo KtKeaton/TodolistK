@@ -13,3 +13,24 @@
  *= require_tree .
  *= require_self
  */
+
+.container-fluid {
+  display: table;
+  position: absolute;
+  top: 10;
+  left: 20;
+  height: 100%;
+  width: 100%;
+}
+
+.row {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.col {
+  margin-left: auto;
+  margin-right: auto;
+  width: 400px;
+  /* Whatever width you want */
+}

@@ -1,3 +1,4 @@
+<%= render "shared/navbar" %>
 <div>
   <%= form_tag search_tasks_path, :method=> 'get' do %>
   <p>
@@ -65,3 +66,7 @@
     <%= msg %>
   </div>
 <% end %>
+
+<p>
+  <%= link_to "臨時測試" , test_tasks_path %>
+</p>

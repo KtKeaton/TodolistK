@@ -3,6 +3,7 @@ Rails.application.routes.draw do
     collection do
       get :search
       get :list
+      get :test
     end
   end
 
@@ -17,7 +18,7 @@ Rails.application.routes.draw do
 
   post "/users/sign_in", to: "sessions#create", as: "login"
 	delete "/users", to: "sessions#destroy", as: "logout"
-  
+
   root "users#sign_in"
 
 end
