@@ -27,6 +27,11 @@
   width: 100%;
 }
 
+.row-sign {
+  display: table-cell;
+  vertical-align: middle;
+}
+
 .row {
   display: table-cell;
   vertical-align: middle;

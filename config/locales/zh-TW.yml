@@ -1,7 +1,11 @@
 zh-TW:
+  nav_login: "登入"
+  nav_logout: "登出"
+  nav_signup: "註冊"
+  nav_task: "的任務"
   task_kill: "任務已刪除"
   task_close: "任務已過期，不可刪除"
-  task_list: "有可能的任務"
+  task_list: "任務列表"
   task_name: "任務名稱"
   task_status: "狀態"
   task_priority: "重要性"

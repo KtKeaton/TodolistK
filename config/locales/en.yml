@@ -1,7 +1,11 @@
 en:
+  nav_login: "Login"
+  nav_logout: "Logout"
+  nav_signup: "Sign-up"
+  nav_task: "'s Mission"
   task_kill: "Mission deleted!"
   task_close: "The mission has expired and cannot be deleted!"
-  task_list: "My Mission(s) Possible"
+  task_list: "My Mission List"
   task_name: "Mission name"
   task_status: "Status"
   task_priority: "Priority"
@@ -29,4 +33,4 @@ en:
   user_login: "Login"
   hp: "MY LIST"
   user_pw_wrong: "Wrong password"
-task_tag: "Tagging"
+  task_tag: "Tagging"
