@@ -32,6 +32,7 @@ gem 'jbuilder', '~> 2.7'
 
 gem 'select2-rails'
 gem 'bootstrap', '~> 5.1.3'
+gem 'simple_form'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false
