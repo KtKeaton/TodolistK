@@ -1,7 +1,7 @@
 class TasksController < ApplicationController
   before_action :find_task, only: [:show, :edit, :update, :destroy]
   before_action :check_login!, except: [:index, :show]
-  before_action :find_user_task, only: [:edit, :update, :destroy, :publish]
+  before_action :find_user_task, only: [:edit, :update, :destroy]
   
   def list
     @tasks = current_user.tasks.order(id: :desc)
@@ -22,7 +22,6 @@ class TasksController < ApplicationController
 
   def create
     @task = current_user.tasks.new(task_params)
-    # @space = current_user.spaces.new(space_params)
 
     if @task.save
       redirect_to list_tasks_path
@@ -70,6 +69,5 @@ private
 
   def find_user_task
     @task = Task.find_by(id: params[:id], user_id: current_user.id)
-		# @task = current_user.tasks.find(params[:id])
 	end
 end
