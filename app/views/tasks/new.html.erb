@@ -1,3 +1,5 @@
 <%= render "shared/navbar" %>
-<h1><%= t('task_do_add') %></h1>
+  <div class="container">
+    <p class="lead"><%= t('task_do_add') %></p>
+  </div>
 <%= render "form" , task: @task %>

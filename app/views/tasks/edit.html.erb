@@ -1,5 +1,6 @@
 <%= render "shared/navbar" %>
-<h1><%= t('task_do_edit') %></h1>
-<%= t('task_status') %>：<%= @task.status %>
-
+  <div class="container">
+    <p class="lead"><%= t('task_do_edit') %></p>
+    <%= t('task_status') %>：<%= t("checkpoint_status.#{@task.status}")%>
+  </div>
 <%= render "form" , task: @task %>  
