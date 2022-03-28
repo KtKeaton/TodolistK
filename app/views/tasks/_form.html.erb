@@ -32,7 +32,13 @@
 
       <div>
         <%= f.label :note, t('task_cont') %>
-          <%= f.text_area :note %>
+        <%= f.text_area :note %>
+      </div>
+
+      <div>
+        <%= f.label :category, "標籤" %>
+        <%= f.input :tag_tokens, input_html: { class: "tag-selector" , :"data-init-tag"=> @tags.map { |t| "\#{t.id}==\#{t.name}"
+          }.join(','), value: @tags.map { |t| t.id }.join(',') } %>
       </div>
 
       <div>

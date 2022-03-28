@@ -3,6 +3,10 @@ class TasksController < ApplicationController
   before_action :check_login!, except: [:index, :show]
   before_action :find_user_task, only: [:edit, :update, :destroy]
   
+  def 
+    
+  end
+
   def list
     @tasks = current_user.tasks.order(id: :desc)
   end
@@ -18,6 +22,7 @@ class TasksController < ApplicationController
 
   def new
     @task = Task.new
+    @tags = []
   end
 
   def create
@@ -37,6 +42,7 @@ class TasksController < ApplicationController
 
   def edit
     @task = find_task
+    @tags = @task.tags.select("tags.id, tags.name")
   end
 
   def update
@@ -62,7 +68,7 @@ private
   end
 
   def task_params
-    p = params.require(:task).permit(:name, :due_date, :note, :priority, :all_tags)
+    p = params.require(:task).permit(:name, :due_date, :note, :priority, :tag_tokens)
     p[:status] = params[:task][:status].to_i
     return p
   end
