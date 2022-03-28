@@ -11,4 +11,15 @@ class Task < ApplicationRecord
     hash
   end
 
+  # Getter 
+  def all_tags    
+    categories.map{|t| t.name}.join(',')    
+  end
+  
+  # Setter  
+  def all_tags=(tag)    
+    self.categories = tag.split(',').map do |tag|      
+    Tag.where(tag: tag.strip).first_or_create    
+    end
+  end
 end
