@@ -1,8 +1,6 @@
 GEM
   remote: https://rubygems.org/
   specs:
-    aasm (5.2.0)
-      concurrent-ruby (~> 1.0)
     actioncable (6.1.5)
       actionpack (= 6.1.5)
       activesupport (= 6.1.5)
@@ -117,9 +115,13 @@ GEM
     matrix (0.4.2)
     method_source (1.0.0)
     mini_mime (1.1.2)
+    mini_portile2 (2.8.0)
     minitest (5.15.0)
     msgpack (1.4.5)
     nio4r (2.5.8)
+    nokogiri (1.13.3)
+      mini_portile2 (~> 2.8.0)
+      racc (~> 1.4)
     nokogiri (1.13.3-x86_64-linux)
       racc (~> 1.4)
     pg (1.2.3)
@@ -163,10 +165,6 @@ GEM
       rake (>= 12.2)
       thor (~> 1.0)
     rake (13.0.6)
-    ransack (2.6.0)
-      activerecord (>= 6.0.4)
-      activesupport (>= 6.0.4)
-      i18n
     rb-fsevent (0.11.1)
     rb-inotify (0.10.1)
       ffi (~> 1.0)
@@ -246,12 +244,13 @@ GEM
     zeitwerk (2.5.4)
 
 PLATFORMS
+  ruby
   x86_64-linux
 
 DEPENDENCIES
-  aasm
   bootsnap (>= 1.4.4)
   bootstrap (~> 5.1.3)
+  bundler (= 2.1.4)
   byebug
   capybara (>= 3.26)
   factory_bot_rails (~> 6.2)
@@ -262,7 +261,6 @@ DEPENDENCIES
   puma (~> 5.0)
   rails (~> 6.1.4, >= 6.1.4.1)
   rails-i18n
-  ransack
   rspec-rails (~> 5.0.0)
   sass-rails (>= 6)
   select2-rails
@@ -279,4 +277,4 @@ RUBY VERSION
    ruby 2.6.6p146
 
 BUNDLED WITH
-   2.3.4
+   2.1.4
