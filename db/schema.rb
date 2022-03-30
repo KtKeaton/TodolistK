@@ -50,7 +50,7 @@ ActiveRecord::Schema.define(version: 2022_03_28_200759) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  add_foreign_key "category_tasks", "categories"
-  add_foreign_key "category_tasks", "tasks"
-  add_foreign_key "tasks", "users"
+  add_foreign_key "category_tasks", "categories", on_delete: :cascade
+  add_foreign_key "category_tasks", "tasks", on_delete: :cascade
+  add_foreign_key "tasks", "users", on_delete: :cascade
 end

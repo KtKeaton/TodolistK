@@ -1,7 +1,7 @@
 class Task < ApplicationRecord
   validates :name, :note, :due_date, :status, :priority, presence: true
   has_many :category_tasks
-  has_many :categories, through: :category_tasks
+  has_many :categories, through: :category_tasks, dependent: :destroy
 	belongs_to :user, foreign_key: true, optional: true
   enum status: { waiting: 0, carry_on: 1, finished: 2 }
   enum priority: { high: 0, medium: 1, low: 2 }
