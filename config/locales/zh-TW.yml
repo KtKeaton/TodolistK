@@ -16,7 +16,7 @@ zh-TW:
   task_created: "開始於"
   task_ends: "結束於"
   task_actions: "採取行動"
-  task_cont: "解任務"
+  task_cont: "開啟任務"
   all_status: "選擇任務狀態"
   checkpoint_status:
     waiting: "待處理"
