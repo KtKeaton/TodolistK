@@ -1,28 +1,28 @@
 <div class="container">
+  <div class="col-w">
+    <%= image_tag 'logo.fw.png' %>
+  </div>
 <p class="lead"><%= t('user_regi') %><p>
   <%= form_for(@user, url: "/users" ) do |f| %>
-    <table class="table table-striped table-hover">
-      <tbody>
-        <tr>
-          <td>
-            <%= f.label t('user_email') %>
-            <%= f.email_field :email %>
-          </td>
-          <td>
-            <%= f.label t('user_pw') %>
-            <%= f.password_field :password %>
-          </td>
-          <td>
-            <%= f.label t('user_pw_con') %>
-            <%= f.password_field :password_confirmation %>
-          </td>
-          <td>
-            <%= f.label t('user_role') %>
-            <%= f.text_field :role %>
-          </td>
-          <%= f.submit %>
-        </tr>
-      </tbody>
-    <% end %>
-  </table>
+    <div class="mb-3">
+      <label for="" class="form-label"><%= f.label t('user_email') %></label><br>
+      <%= f.email_field :email %>
+    </div>
+    <div class="mb-3">
+      <label for="" class="form-label"><%= f.label t('user_pw') %></label><br>
+      <%= f.password_field :password %>
+    </div>
+    <div class="mb-3">
+      <label for="" class="form-label"><%= f.label t('user_pw_con') %></label><br>
+      <%= f.password_field :password_confirmation %>
+    </div>
+     <div class="mb-3">
+      <label for="" class="form-label"><%= f.label t('user_role') %></label><br>
+      <%= f.text_field :role %>
+    </div>
+    <div class="mb-3">
+      <%= f.submit %>
+    </div>
+  <% end %>
+
 </div>
