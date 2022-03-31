@@ -10,12 +10,12 @@
       </div>
       <div class="col">
         <%= form_for(@user, url: login_path) do |f| %>
-          <div class="field">
-            <%= f.label t('user_email') %>
+          <div class="mb-3">
+            <label for="" class="form-label"><%= f.label t('user_email') %></label><br>
               <%= f.email_field :email %>
           </div>
-          <div class="field">
-            <%= f.label t('user_pw') %>
+          <div class="mb-3">
+            <label for="" class="form-label"><%= f.label t('user_pw') %></label><br>
               <%= f.password_field :password %>
           </div>
           <%= f.submit "Login" %>
