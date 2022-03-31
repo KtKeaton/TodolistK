@@ -3,7 +3,6 @@ Rails.application.routes.draw do
     collection do
       get :search
       get :list
-      get :test
     end
   end
 
