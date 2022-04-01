@@ -8,11 +8,11 @@ class TasksController < ApplicationController
   end
 
   def search
-    @tasks = Task.all.order("created_at desc")
+    @tasks = current_user.tasks.order(id: :desc)
     if params[:name]
-      @tasks = Task.where("name LIKE ?", "%#{params[:name]}%")
+      @tasks = current_user.tasks.where("name LIKE ?", "%#{params[:name]}%")
     else  
-      @tasks = Task.all
+      @tasks = current_user.tasks.order(id: :desc)
     end
   end
 
