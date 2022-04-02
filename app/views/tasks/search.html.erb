@@ -4,11 +4,11 @@
       <%= form_tag search_tasks_path, :method=> 'get' do %>
         <p>
           <%= text_field_tag :name, params[:name] %>
-            <%= submit_tag "Search" , :name=> nil %>
+            <%= text_field_tag :note, params[:note] %>
+              <%= submit_tag "Search" , :name=> nil %>
         </p>
         <% end %>
     </div>
-
     <p class="lead">
       <%= t('task_list') %>
     </p>
@@ -84,5 +84,5 @@
         <div>
           <%= msg %>
         </div>
-      <% end %>
+        <% end %>
   </div>
