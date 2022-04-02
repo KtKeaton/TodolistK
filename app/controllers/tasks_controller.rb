@@ -8,18 +8,18 @@ class TasksController < ApplicationController
   end
 
   def search
-    if @tasks = current_user.tasks.where('name=? OR note=?', params[:name], params[:note])
-      @tasks = current_user.tasks.order(id: :desc)
-    elsif params[:name].present? && params[:saf].blank?
-      @tasks = current_user.tasks.where('name=? and note=?', params[:name], params[:note])
-    else
+    @tasks = current_user.tasks.order(id: :desc)
+    if params[:name]
+      @tasks = current_user.tasks.where("name LIKE ?", "%#{params[:name]}%")
+    else  
       @tasks = current_user.tasks.order(id: :desc)
     end
 
-    # @tasks = current_user.tasks.order(id: :desc)
-    # if params[:name]
-    #   @tasks = current_user.tasks.where("name LIKE ?", "%#{params[:name]}%")
-    # else  
+    # if @tasks = current_user.tasks.where('name=? OR note=?', params[:name], params[:note])
+    #   @tasks = current_user.tasks.order(id: :desc)
+    # elsif params[:name].present? && params[:saf].blank?
+    #   @tasks = current_user.tasks.where('name=? and note=?', params[:name], params[:note])
+    # else
     #   @tasks = current_user.tasks.order(id: :desc)
     # end
   end
