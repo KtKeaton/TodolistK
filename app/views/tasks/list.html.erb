@@ -2,9 +2,12 @@
 <div class="container">
 <div>
   <%= form_tag search_tasks_path, :method=> 'get' do %>
-  <p>
+  <!-- <p>
     <%= text_field_tag :name, params[:name] %>
-    <!-- <%= text_field_tag :note, params[:note] %> -->
+    <%= submit_tag "Search" , :name=> nil %>
+  </p> -->
+  <p>
+    <%= text_field_tag :search, params[:search] %>
     <%= submit_tag "Search" , :name=> nil %>
   </p>
   <% end %>
