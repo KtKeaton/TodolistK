@@ -8,7 +8,7 @@ class TasksController < ApplicationController
   end
 
   def search
-    # @tasks = current_user.tasks.order(id: :desc)
+    @tasks = current_user.tasks.order(id: :desc)
     # if params[:name]
     #   @tasks = current_user.tasks.where("name LIKE ?", "%#{params[:name]}%")
     # else  
@@ -30,7 +30,7 @@ class TasksController < ApplicationController
     # else
     #   @tasks = current_user.tasks.order(id: :desc)
     # end
-  end
+  # end
 
   def new
     @task = Task.new
