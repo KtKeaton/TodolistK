@@ -5,15 +5,27 @@ class TasksController < ApplicationController
   
   def list
     @tasks = current_user.tasks.order(id: :desc)
+
+    tasks = current_user.tasks.includes(:team)
+    tasks = current_user.tasks.where('name ilike ?', "%#{params[:name]}%") if params[:name].present?
+    tasks = current_user.tasks.order("#{params[:note]} #{params[:status]}")
+    # render(partial: 'tasks', locals: { tasks: tasks })
+
   end
 
   def search
     @tasks = current_user.tasks.order(id: :desc)
-    if params[:name]
-      @tasks = current_user.tasks.where("name LIKE ?", "%#{params[:name]}%")
-    else  
-      @tasks = current_user.tasks.order(id: :desc)
-    end
+
+    tasks = current_user.tasks.includes(:team)
+    tasks = current_user.tasks.where('name ilike ?', "%#{params[:name]}%") if params[:name].present?
+    tasks = current_user.tasks.order("#{params[:note]} #{params[:status]}")
+    # render(partial: 'tasks', locals: { tasks: tasks })
+
+    # if params[:name]
+    #   @tasks = current_user.tasks.where("name LIKE ?", "%#{params[:name]}%")
+    # else  
+    #   @tasks = current_user.tasks.order(id: :desc)
+    # end
 
   #   if params[:search].present?
   #     @tasks = current_user.tasks.where('name=? OR note=?', params[:search], params[:search]).order(id: :desc)
