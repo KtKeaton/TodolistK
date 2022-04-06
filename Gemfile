@@ -28,7 +28,7 @@ gem 'redis', '~> 4.0'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
-gem 'select2-rails'
+
 gem 'bootstrap', '~> 5.1.3'
 gem 'simple_form'
 gem "font-awesome-rails"
