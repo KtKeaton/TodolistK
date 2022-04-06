@@ -30,7 +30,6 @@ gem 'redis', '~> 4.0'
 
 
 gem 'bootstrap', '~> 5.1.3'
-gem 'simple_form'
 gem "font-awesome-rails"
 gem 'pg_search'
 gem 'turbo-rails'
