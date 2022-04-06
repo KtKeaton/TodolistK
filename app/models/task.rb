@@ -1,5 +1,3 @@
-include PgSearch::Model 
-
 class Task < ApplicationRecord
   validates :name, :note, :due_date, :status, :priority, presence: true
   has_many :category_tasks
