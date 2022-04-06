@@ -28,10 +28,8 @@ gem 'redis', '~> 4.0'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
-
 gem 'bootstrap', '~> 5.1.3'
 gem "font-awesome-rails"
-gem 'pg_search'
 gem 'turbo-rails'
 gem 'hotwire-rails'
 
