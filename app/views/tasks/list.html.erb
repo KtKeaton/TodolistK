@@ -21,7 +21,11 @@
   <thead>
     <tr>
       <th scope="col">#</th>
-      <th scope="col"><%= sort_link(@query, :name) %></th>
+      <th scope="col">
+        <%= sort_link(@query, :name) do %>
+          <%= t('task_name') %>
+        <% end %>
+      </th>
       <th scope="col"><%= t('task_status') %></th>
       <th scope="col"><%= t('task_priority') %></th>
       <th scope="col"><%= t('task_created') %></th>
