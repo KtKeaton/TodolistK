@@ -18,7 +18,7 @@ en:
   task_ends: "Ends at"
   task_actions: "Take action!"
   task_cont: "Content"
-  all_status: "Mission Report December 16th, 1991"
+  all_status: "Select status"
   checkpoint_status:
     waiting: "Waiting"
     carry_on: "Carry on"
