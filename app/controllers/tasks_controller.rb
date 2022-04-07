@@ -10,17 +10,6 @@ class TasksController < ApplicationController
     @tasks = @query.result
   end
 
-  def search
-    @query = current_user.tasks.ransack(params[:q])
-    @tasks = @query.result
-    # if params[:name]
-    #   @tasks = current_user.tasks.where("name LIKE ?", "%#{params[:name]}%")
-    # else  
-    #   @tasks = current_user.tasks.order(id: :desc)
-    # end
-  end
-
-
   def new
     @task = Task.new
   end

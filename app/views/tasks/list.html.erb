@@ -1,13 +1,5 @@
 <%= render "shared/navbar" %>
 <div class="container">
-<!-- <div>
-  <%= form_tag search_tasks_path, :method=> 'get' do %>
-  <p>
-    <%= text_field_tag :name, params[:name] %>
-    <%= submit_tag "Search" , :name=> nil %>
-  </p>
-  <% end %>
-</div> -->
 
 <%= search_form_for(@query, url: list_tasks_path) do |f| %>
   <%= f.label :name, t('search') %>
@@ -26,10 +18,26 @@
           <%= t('task_name') %>
         <% end %>
       </th>
-      <th scope="col"><%= t('task_status') %></th>
-      <th scope="col"><%= t('task_priority') %></th>
-      <th scope="col"><%= t('task_created') %></th>
-      <th scope="col"><%= t('task_ends') %></th>
+      <th scope="col">
+        <%= sort_link(@query, :status) do %>
+          <%= t('task_status') %>
+        <% end %>
+      </th>
+      <th scope="col">
+        <%= sort_link(@query, :priority) do %>
+          <%= t('task_priority') %>
+        <% end %>
+      </th>
+      <th scope="col">
+        <%= sort_link(@query, :created_at) do %>
+          <%= t('task_created') %>
+        <% end %>
+      </th>
+      <th scope="col">
+        <%= sort_link(@query, :due_date) do %>
+          <%= t('task_ends') %>
+        <% end %>
+      </th>
       <th scope="col"><%= t('task_actions') %></th>
       <th colspan="2"></th>
       <th scope="col"><%= t('task_tag') %></th>
