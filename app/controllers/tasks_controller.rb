@@ -4,7 +4,7 @@ class TasksController < ApplicationController
   before_action :find_user_task, only: [:edit, :update, :destroy]
   
   def list
-    @tasks = current_user.tasks.order(id: :desc)
+    #@tasks = current_user.tasks.order(id: :desc)
 
     @query = current_user.tasks.ransack(params[:q])
     @tasks = @query.result
