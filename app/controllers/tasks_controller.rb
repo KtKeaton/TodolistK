@@ -7,7 +7,7 @@ class TasksController < ApplicationController
     #@tasks = current_user.tasks.order(id: :desc)
 
     @query = current_user.tasks.ransack(params[:q])
-    @tasks = @query.result.page(1).per(3)
+    @tasks = @query.result.page(1).per(10)
   end
 
   def new
