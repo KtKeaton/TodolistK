@@ -28,7 +28,7 @@ en:
   task_do_kill: "Delete"
   task_do_sure: "Are you sure?"
   task_do_add: "Add a new Mission"
-  task_title: "Mission Title"
+
   task_date: "Expire date"
   task_save: "Sava the Mission"
   user_regi: "Registration"
