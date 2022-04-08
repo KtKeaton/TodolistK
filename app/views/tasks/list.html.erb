@@ -9,8 +9,6 @@
   <%= f.submit %>
 <% end %>
 
-<%= paginate @tasks %>
-
 <p class="lead"><%= t('task_list') %></p>
 <table class="table table-striped table-hover">
   <thead>
@@ -82,6 +80,8 @@
   </tbody>
 </table>
 
+<%= paginate @tasks %>
+<p>
 <%= link_to t('task_do_add') , new_task_path %>
 
 <% flash.each do |type, msg| %>
