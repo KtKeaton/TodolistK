@@ -3,6 +3,7 @@ en:
   nav_logout: "Logout"
   nav_signup: "Sign-up"
   search: "Search for"
+  task_name_note: "Mission Name or Content"
   nav_task: "'s Mission"
   task_kill: "Mission deleted!"
   task_close: "The mission has expired and cannot be deleted!"
