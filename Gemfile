@@ -65,3 +65,5 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem "rails-i18n"
 gem "ransack", "~> 3.0"
+
+gem "kaminari", "~> 1.2"
