@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   resources :tasks, path: "mission_possible" do
     collection do
       get :list
+      get :test
     end
   end
 
