@@ -10,10 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_03_28_200759) do
+ActiveRecord::Schema.define(version: 2022_04_10_075357) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "bookmarks", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "task_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["task_id"], name: "index_bookmarks_on_task_id"
+    t.index ["user_id"], name: "index_bookmarks_on_user_id"
+  end
 
   create_table "categories", force: :cascade do |t|
     t.string "tag"
@@ -50,7 +59,9 @@ ActiveRecord::Schema.define(version: 2022_03_28_200759) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  add_foreign_key "category_tasks", "categories", on_delete: :cascade
-  add_foreign_key "category_tasks", "tasks", on_delete: :cascade
-  add_foreign_key "tasks", "users", on_delete: :cascade
+  add_foreign_key "bookmarks", "tasks"
+  add_foreign_key "bookmarks", "users"
+  add_foreign_key "category_tasks", "categories"
+  add_foreign_key "category_tasks", "tasks"
+  add_foreign_key "tasks", "users"
 end

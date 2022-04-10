@@ -5,7 +5,8 @@ class User < ApplicationRecord
   validates :password, confirmation: true, length: { minimum: 4 }, presence: true
   validates :role, presence: true, uniqueness: true
   has_many :tasks, dependent: :destroy
-
+  has_many :bookmarks
+  
   before_create :encrypt_password
 
   def encrypt_password
