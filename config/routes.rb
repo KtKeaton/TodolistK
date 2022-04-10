@@ -20,7 +20,7 @@ Rails.application.routes.draw do
   root "users#sign_in"
 
   # API
-	# POST /api/v1/notes/2/favorite
+	# POST /api/v1/tasks/2/favorite
 	namespace :api do
 		namespace :v1 do
 			resources :tasks, only: [] do
