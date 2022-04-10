@@ -11,6 +11,10 @@
       <%= t('task_cont') %>：
       <%= simple_format(@task.note) %>
     </div>
+    <div data-controller="favo">
+      <h3>加入最愛</h3>
+    </div> 
+
     <div>
       <%= link_to t('hp') , list_tasks_path %>
   </div>
