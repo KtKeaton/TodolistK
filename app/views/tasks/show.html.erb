@@ -1,6 +1,13 @@
 <%= render "shared/navbar" %>
 <div class="container">
   <%= t('task_name') %>:<h1><%= @task.name %></h1>
+
+    <div data-controller="favorite" data-favorite-id-value="<%= @task.id %>">
+      <a href="#" id="favorite_btn" data-action="favorite#toggleFavorite">
+        <%= favorite_icon(current_user, @task) %>
+      </a>
+    </div>
+
     <div>
       <%= @task.due_date %>
     </div>
@@ -11,10 +18,6 @@
       <%= t('task_cont') %>：
       <%= simple_format(@task.note) %>
     </div>
-    <div data-controller="favo">
-      <h3>加入最愛</h3>
-    </div> 
-
     <div>
       <%= link_to t('hp') , list_tasks_path %>
   </div>
