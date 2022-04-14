@@ -11,7 +11,8 @@ https://rocky-plateau-27971.herokuapp.com/
 - **可為任務加上分類標籤//已完成**
 - **任務列表，並可依優先順序、開始時間及結束時間等進行排序。 //已完成**
 - **任務列表分頁//已完成**
-- 其他延伸功能
+- 可依狀態篩選任務
+- E2E測試
 
 ## ER 圖
 ![Todolist drawio](https://user-images.githubusercontent.com/86760614/162574170-f36508e5-7133-42a5-b5a9-e94fa78676d3.png)
