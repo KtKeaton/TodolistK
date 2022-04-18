@@ -82,7 +82,7 @@
 
 <%= paginate @tasks %>
 <p>
-<%= link_to t('task_do_add') , list_tasks_path %>
+<%= link_to t('task_do_add') , new_task_path %>
 
 <% flash.each do |type, msg| %>
   <div>
