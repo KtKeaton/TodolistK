@@ -34,7 +34,7 @@ zh-TW:
   user_email: "電子郵件地址"
   user_pw: "密碼"
   user_pw_con: "確認密碼"
-  user_role: "使用者姓名"
+  user_name: "使用者姓名"
   user_login: "登入會員"
   hp: "回列表"
   user_pw_wrong: "密碼錯誤"

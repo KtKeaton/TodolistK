@@ -35,7 +35,7 @@ en:
   user_email: "E-mail Address"
   user_pw: "Password"
   user_pw_con: "Password confirmation"
-  user_role: "User name"
+  user_name: "User name"
   user_login: "Login"
   hp: "MY LIST"
   user_pw_wrong: "Wrong password"
