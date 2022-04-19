@@ -8,6 +8,7 @@ en:
   task_kill: "Mission deleted!"
   task_close: "The mission has expired and cannot be deleted!"
   task_list: "My Mission List"
+  task_missions: "Mission(s)"
   task_name: "Mission name"
   task_status: "Status"
   task_priority: "Priority"
@@ -40,3 +41,4 @@ en:
   hp: "MY LIST"
   user_pw_wrong: "Wrong password"
   task_tag: "Tagging"
+  Filter_by_keyword: "Filter by keyword"

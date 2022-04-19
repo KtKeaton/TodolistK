@@ -8,6 +8,7 @@ zh-TW:
   task_kill: "任務已刪除"
   task_close: "任務已過期，不可刪除"
   task_list: "任務列表"
+  task_missions: "件任務"
   task_name: "任務標題"
   task_status: "狀態"
   task_priority: "重要性"
@@ -39,6 +40,7 @@ zh-TW:
   hp: "回列表"
   user_pw_wrong: "密碼錯誤"
   task_tag: "任務標籤"
+  Filter_by_keyword: "依關鍵字篩選"
 
   activerecord:
     errors:
