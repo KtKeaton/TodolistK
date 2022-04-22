@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  namespace :admin, path: 'chairman' do
+  namespace :admin do
     root 'tasks#index'
     resources :tasks, except: [:show]
     resources :users, except: [:show] do
